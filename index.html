@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women's Safety App</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://www.google.co.in/maps/@9.887509,77.4708452,13z?entry=ttu&g_ep=EgoyMDI1MDQwMi4xIKXMDSoASAFQAw%3D%3D"></script>
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Women's Safety App</h1>
+        </header>
+
+        <main>
+            <!-- SOS Section -->
+            <section class="sos-section">
+                <button id="sosButton" class="sos-button">SOS</button>
+                <p id="locationStatus"></p>
+            </section>
+
+            <!-- Live Location Section -->
+            <section class="location-section">
+                <h2>Live Location</h2>
+                <div id="map"></div>
+            </section>
+
+            <!-- Fake Call Section -->
+            <section class="fake-call-section">
+                <h2>Fake Call</h2>
+                <button id="fakeCallButton">Generate Fake Call</button>
+                <div id="callScreen" class="call-screen hidden">
+                    <div class="caller-info">
+                        <h3>Incoming Call</h3>
+                        <p>Mom</p>
+                    </div>
+                    <div class="call-actions">
+                        <button id="acceptCall">Accept</button>
+                        <button id="rejectCall">Reject</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Safe Route Section -->
+            <section class="safe-route-section">
+                <h2>Safe Route</h2>
+                <div class="route-inputs">
+                    <input type="text" id="origin" placeholder="Enter starting point">
+                    <input type="text" id="destination" placeholder="Enter destination">
+                    <button id="findRoute">Find Safe Route</button>
+                </div>
+                <div id="routeMap"></div>
+            </section>
+
+            <!-- Emergency Contacts Section -->
+            <section class="contacts-section">
+                <h2>Emergency Contacts</h2>
+                <form id="contactForm">
+                    <input type="text" id="contactName" placeholder="Contact Name" required>
+                    <input type="tel" id="contactPhone" placeholder="Phone Number" required>
+                    <input type="email" id="contactEmail" placeholder="Email" required>
+                    <button type="submit">Add Contact</button>
+                </form>
+                <div id="contactsList"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-auth.js"></script>
+<script src="init.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
